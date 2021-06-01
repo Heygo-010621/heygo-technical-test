@@ -4,6 +4,12 @@
 - Enter 2 or more characters into the search box input.
 - The app will search a database of around 59k points of inerest in the UK, for names that begin with the input.
 - The results will be displayed, sorted by the closest match (using match length).
+* Live
+Site is live here: https://serene-taiga-17836.herokuapp.com/
+Deploy any changes to heroku via:
+#+begin_src sh
+$ git push heroku master
+#+end_src
 
 * Dev
 
