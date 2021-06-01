@@ -1,0 +1,57 @@
+#+TITLE: README
+
+* Description
+- Enter 2 or more characters into the search box input.
+- The app will search a database of around 59k points of inerest in the UK, for names that begin with the input.
+- The results will be displayed, sorted by the closest match (using match length).
+
+* Dev
+
+Run both applications on separate ports and set up react proxy to route API calls to Express server.
+Running client using development server gives many benefits (hot reloading, linting, etc.)
+
+** DB
+#+begin_src sh
+$ cd ./server/data
+$ sqlite3 locations.db
+
+sqlite> create table locations (geonameid text, name text);
+sqlite> .separator "\t"
+sqlite> .import locations.tsv locations
+#+end_src
+** Server
+In the root of the project:
+#+begin_src sh
+$ npm i
+$ npm start
+#+end_src
+
+This will start the server, running on: http://localhost:3001
+** Client
+#+begin_src sh
+$ cd ./client
+$ npm i
+$ npm start
+#+end_src
+
+This will start the React client on: http://localhost:3000
+
+* Prod
+
+For production build, want optimised (pre-compiled, minified, bundled) React application.
+Then using Express to serve both:
+- search API requests
+- React static files
+
+This means we only have a single application running.
+
+** Steps
+
+1. Setup DB as above.
+2. From the root of the project:
+#+begin_src sh
+$ npm run build        # Builds React application for prod
+
+$ npm i                # Install npm packages for server
+$ npm start            # Run the server
+#+end_src
