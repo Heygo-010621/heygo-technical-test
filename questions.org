@@ -1,26 +1,26 @@
 #+TITLE: Questions
 
-1. Logs "2" to the console. Then after 100ms logs "1" to the console.
-   - setTimeout triggers Web API timeout
-   - setTimeout finishes execution and Web API waits 100ms
-   - console.log("2") executes and "2" logged to console
+1. Logs 2 to the console. Then after 100ms logs 1 to the console.
+   - =setTimeout= triggers Web API timeout
+   - =setTimeout= finishes execution and Web API waits 100ms
+   - =console.log("2")= executes and "2" logged to console
    - timeout expires after 100ms, callback function added to event loop
    - all code in current execution environment has complete -> call stack cleared
    - event loop checked for code to be executed, callback added to call stack
-   - callback executed, console.log("1") pushed onto stack
-   - console.log("1") executes and "1" logged to console
+   - callback executed, =console.log("1")= pushed onto stack
+   - =console.log("1")= executes and "1" logged to console
 2. Prints every integer from 10 down to 0
-   - foo(0) called
+   - =foo(0)= called
    - passes inner condition
    - current function paused + execution context added to stack
-   - execute nested function, foo(1)
+   - execute nested function, =foo(1)=
    - this continues until d=10
    - then condition fails and 10 is logged to console
    - then previous execution context popped from stack
    - function continues, 9 logged to console
    - and so on until 0 logged to console and everything popped from stack
 
-3. Function will return default response of =5= for any Javascript falsy value, eg.
+3. Function will return default response of 5 for any Javascript falsy value, eg.
    - false
    - 0
    - ""
@@ -36,7 +36,7 @@
 
    That function + lexical environment forms a _closure_.
    Then when =bar(2)= is executed, 2 is added to =a=, which is =bar='s lexical environment is 1.
-   That sums to =3= which is what gets returned.
+   That sums to 3 which is what gets returned.
 5. You:
    - Have a custom function you want to run
    - On twice the input value
