@@ -1,6 +1,6 @@
 #+TITLE: Questions
 
-1. Logs 2 to the console. Then after 100ms logs 1 to the console.
+1. Logs "2" to the console. Then after 100ms logs "1" to the console.
    - =setTimeout= triggers Web API timeout
    - =setTimeout= finishes execution and Web API waits 100ms
    - =console.log("2")= executes and "2" logged to console
@@ -28,7 +28,7 @@
    - undefined
    - NaN
     which may not be the desired behaviour.
-4. Logs "3" to the console
+4. Logs 3 to the console
 
    =bar= holds a reference to an instance of the inner function, created when =foo(1)= was run
 
