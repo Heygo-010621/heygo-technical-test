@@ -35,7 +35,7 @@
    The instance of that function maintained a reference to its lexical environment where =a=1=
 
    That function + lexical environment forms a _closure_.
-   Then when =bar(2)= is executed, 2 is added to =a=, which is =bar='s lexical environment is 1.
+   Then when =bar(2)= is executed, 2 is added to =a=, which in =bar='s lexical environment is 1.
    That sums to 3 which is what gets returned.
 5. You:
    - Have a custom function you want to run
